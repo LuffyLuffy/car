@@ -68,7 +68,7 @@ scatter3d.default <- function(x, y, z,
     fogtype=c("exp2", "linear", "exp", "none"),
     residuals=(length(fit) == 1), surface=TRUE, fill=TRUE, grid=TRUE, grid.lines=26,
     df.smooth=NULL, df.additive=NULL,
-    sphere.size=1, radius=1, threshold=0.01, speed=1, fov=20, 
+    sphere.size=1, radius=1, threshold=0.01, speed=1, fov=30, theta=10,phi=0,
     fit="linear", groups=NULL, parallel=TRUE, ellipsoid=FALSE, level=0.5, ellipsoid.alpha=0.1,
     # id.method=c("mahal", "xz", "y", "xyz", "identify", "none"), 
     # id.n=if (id.method == "identify") Inf else 0,
@@ -117,7 +117,7 @@ scatter3d.default <- function(x, y, z,
     ylab
     zlab
     rgl::next3d()
-    rgl::rgl.viewpoint(fov=fov,theta =70, phi = 0)
+    rgl::rgl.viewpoint(fov=fov,theta =theta, phi = phi)
     rgl::rgl.bg(color=bg.col, fogtype=fogtype)
     if (id.method == "identify"){
         xg <- x
